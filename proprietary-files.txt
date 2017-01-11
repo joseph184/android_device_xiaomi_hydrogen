@@ -27,6 +27,9 @@ vendor/lib64/libadsprpc.so
 vendor/lib/libadsprpc.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
+# New blobs from 7.0 MIUI
+vendor/lib/libadsp_default_listener.so
+vendor/lib64/libadsp_default_listener.so
 
 # ADSP modules
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
@@ -50,7 +53,6 @@ vendor/lib64/libacdbrtac.so
 vendor/lib64/libadiertac.so
 vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
-vendor/lib64/libhwdaphal.so
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbmapper.so
@@ -58,7 +60,6 @@ vendor/lib/libacdbrtac.so
 vendor/lib/libadiertac.so
 vendor/lib/libaudcal.so
 vendor/lib/libaudioalsa.so
-vendor/lib/libhwdaphal.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
@@ -83,12 +84,13 @@ etc/people_gender.dat
 etc/sdm_ys_32p_120_21_5_perturb50.bin
 etc/watermark_font_2300_3199.dat
 lib/hw/camera.msm8952.so
-lib/libimscamera_jni.so
+vendor/lib/libimscamera_jni.so
+vendor/lib64/libimscamera_jni.so
 lib/libmm-qcamera.so
 lib/libmmcamera_interface.so
 lib/libmmjpeg_interface.so
 lib/libqomx_core.so
-lib/libRecoFace.so
+vendor/lib/libRecoFace.so
 vendor/lib/lib-imscamera.so
 vendor/lib/libarcsoft_beauty_shot.so
 vendor/lib/libchromaflash.so
@@ -98,8 +100,7 @@ vendor/lib/libflash_pmic.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegdmahw.so
 vendor/lib/libjpegehw.so
-vendor/lib/libllvd_smore.so
-vendor/lib/libllvd_sw_tnr.so
+vendor/lib/libtrueportrait.so
 vendor/lib/libmmcamera2_c2d_module.so
 vendor/lib/libmmcamera2_cpp_module.so
 vendor/lib/libmmcamera2_dcrf.so
@@ -118,7 +119,6 @@ vendor/lib/libmmcamera2_stats_algorithm.so
 vendor/lib/libmmcamera2_stats_modules.so
 vendor/lib/libmmcamera2_vpe_module.so
 vendor/lib/libmmcamera2_wnr_module.so
-vendor/lib/libmmcamera_cac3_lib.so
 vendor/lib/libmmcamera_chromaflash_lib.so
 vendor/lib/libmmcamera_csidtg.so
 vendor/lib/libmmcamera_dcrf_lib.so
@@ -166,7 +166,6 @@ vendor/lib/libmmcamera_optizoom_lib.so
 vendor/lib/libmmcamera_pdafcamif.so
 vendor/lib/libmmcamera_pdaf.so
 vendor/lib/libmmcamera_ppbase_module.so
-vendor/lib/libmmcamera_sw_tnr.so
 vendor/lib/libmmcamera_thread_services.so
 vendor/lib/libmmcamera_tintless_algo.so
 vendor/lib/libmmcamera_tintless_bg_pca_algo.so
@@ -193,6 +192,7 @@ vendor/lib/libubifocus.so
 
 # Camera actuators
 vendor/lib/libactuator_ad5816g.so
+vendor/lib/libmmcamera_dw9761b_eeprom.so
 vendor/lib/libactuator_ad5823.so
 vendor/lib/libactuator_bu64244gwz.so
 vendor/lib/libactuator_bu64297.so
@@ -207,6 +207,13 @@ vendor/lib/libactuator_lc898212xd.so
 vendor/lib/libactuator_rohm_bu64243gwz.so
 
 # Camera chromatix
+vendor/lib/libchromatix_s5k3m2xm_hfr_60_dw9761b.so
+vendor/lib/libchromatix_s5k3m2xm_hfr_90_dw9761b.so
+vendor/lib/libchromatix_s5k3m2xm_hfr_120_dw9761b.so
+vendor/lib/libchromatix_s5k3m2xm_zsl_video_dw9761b.so
+vendor/lib/libchromatix_s5k3m2xm_zsl_preview_dw9761b.so
+vendor/lib/libchromatix_s5k3m2xm_default_video_dw9761b.so
+vendor/lib/libchromatix_s5k3m2xm_default_preview_dw9761b.so
 vendor/lib/libchromatix_csidtg_common.so
 vendor/lib/libchromatix_csidtg_cpp_preview.so
 vendor/lib/libchromatix_csidtg_postproc.so
@@ -358,17 +365,13 @@ framework/com.quicinc.cne.jar
 framework/ConnectivityExt.jar
 vendor/lib64/libcne.so
 vendor/lib64/libcneapiclient.so
-vendor/lib64/libcneconn.so
 vendor/lib64/libcneqmiutils.so
-vendor/lib64/libNimsWrap.so
 vendor/lib64/libvendorconn.so
 vendor/lib64/libwms.so
 vendor/lib64/libwqe.so
 vendor/lib/libcne.so
 vendor/lib/libcneapiclient.so
-vendor/lib/libcneconn.so
 vendor/lib/libcneqmiutils.so
-vendor/lib/libNimsWrap.so
 vendor/lib/libvendorconn.so
 vendor/lib/libwms.so
 vendor/lib/libwqe.so
@@ -418,6 +421,12 @@ vendor/lib64/libSecureUILib.so
 vendor/lib64/libssd.so
 vendor/lib64/libStDrvInt.so
 vendor/lib/libQSEEComAPI.so
+vendor/lib/mediadrm/libwvdrmengine.so
+# Import from bullhead (widevine) ##########
+vendor/lib/drm/libdrmwvmplugin.so
+vendor/lib/libWVStreamControlAPI_L1.so
+vendor/lib/libwvdrm_L1.so
+vendor/lib/libwvm.so
 
 # Firmwares
 etc/firmware/DE.o.msm8952
@@ -432,34 +441,33 @@ lib/lib_fpc_tac_shared.so
 # Gatekeeper
 vendor/lib64/hw/gatekeeper.msm8952.so
 
-# GPS
--lib64/libloc_api_v02.so
--lib64/libloc_ds_api.so
+# GPS from TheMuppets + what's missing from MIUI China Dev 6.11.24
 -lib/libloc_api_v02.so
--lib/libloc_ds_api.so
-vendor/lib64/hw/flp.default.so
-vendor/lib64/libalarmservice_jni.so
-vendor/lib64/libdataitems.so
-vendor/lib64/libflp.so
-vendor/lib64/libgeofence.so
-vendor/lib64/libizat_core.so
-vendor/lib64/liblbs_core.so
-vendor/lib64/libloc_ext.so
-vendor/lib64/libloc_xtra.so
-vendor/lib64/liblocationservice.so
-vendor/lib64/liblowi_client.so
-vendor/lib64/libulp2.so
+-lib64/libloc_api_v02.so
+lib/libloc_ds_api.so
+lib64/libloc_ds_api.so
 vendor/lib/hw/flp.default.so
+vendor/lib64/hw/flp.default.so
 vendor/lib/libalarmservice_jni.so
+vendor/lib64/libalarmservice_jni.so
 vendor/lib/libdataitems.so
+vendor/lib64/libdataitems.so
 vendor/lib/libflp.so
+vendor/lib64/libflp.so
 vendor/lib/libgeofence.so
+vendor/lib64/libgeofence.so
 vendor/lib/libizat_core.so
+vendor/lib64/libizat_core.so
 vendor/lib/liblbs_core.so
+vendor/lib64/liblbs_core.so
 vendor/lib/libloc_ext.so
+vendor/lib64/libloc_ext.so
 vendor/lib/liblocationservice.so
+vendor/lib64/liblocationservice.so
 vendor/lib/liblowi_client.so
+vendor/lib64/liblowi_client.so
 vendor/lib/libulp2.so
+vendor/lib64/libulp2.so
 
 # Graphics
 vendor/lib64/egl/eglSubDriverAndroid.so
@@ -574,6 +582,7 @@ vendor/lib/libperipheral_client.so
 bin/displayfeature
 etc/permissions/com.qti.snapdragon.sdk.display.xml
 framework/com.qti.snapdragon.sdk.display.jar
+-vendor/app/colorservice/colorservice.apk
 vendor/bin/mm-pp-daemon
 vendor/lib64/libdisp-aba.so
 vendor/lib64/libmm-als.so
@@ -588,8 +597,8 @@ etc/data/dsi_config.xml
 etc/data/netmgr_config.xml
 etc/data/qmi_config.xml
 etc/permissions/qti_permissions.xml
--lib64/libqminvapi.so
--lib/libqminvapi.so
+lib64/libqminvapi.so
+lib/libqminvapi.so
 vendor/lib64/libdiag.so
 vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
@@ -656,9 +665,27 @@ vendor/lib64/libxml.so
 vendor/lib/libmdmdetect.so
 vendor/lib/libxml.so
 vendor/qcril.db
+# New blobs from 7.0 MIUI, fixes unknown baseband/sim not detected, other fixes here for libs moved in diffrent directories
+vendor/lib/libril-qc-ltedirectdisc.so
+vendor/lib64/libril-qc-ltedirectdisc.so
+vendor/lib/librilqmiservices.so
+vendor/lib64/librilqmiservices.so
+vendor/lib/libsettings.so
+vendor/lib64/libsettings.so
 
 # Sensors
 bin/sensors.qcom
+etc/permissions/com.xiaomi.sensor.xml
+lib64/libcalapi.so
+lib64/libsensor_cal.so
+lib64/libsensor_calJNI.so
+lib/libcalapi.so
+lib/libsensor_cal.so
+lib/libsensor_calJNI.so
+vendor/lib64/libsensor_test.so
+vendor/lib/libsensor_test.so
+etc/sensors/hals.conf
+etc/sensors/sensor_def_qcomdev.conf
 vendor/lib64/hw/activity_recognition.msm8952.so
 vendor/lib64/libsensor1.so
 vendor/lib64/libsensor_reg.so
@@ -675,6 +702,14 @@ vendor/lib/sensors.ssc.so
 # Sound trigger
 vendor/lib/hw/sound_trigger.primary.msm8952.so
 vendor/lib/libsmwrapper.so
+
+# Vulkan
+vendor/lib/hw/vulkan.msm8952.so
+vendor/lib64/hw/vulkan.msm8952.so
+vendor/lib/libllvm-qgl.so
+vendor/lib64/libllvm-qgl.so
+etc/permissions/android.hardware.vulkan.level-0.xml
+etc/permissions/android.hardware.vulkan.version-1_0_3.xml
 
 # Thermal
 etc/thermal-engine-8956.conf

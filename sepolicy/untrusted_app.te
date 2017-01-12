@@ -1,0 +1,1 @@
+neverallow untrusted_app debugfs_type:file read;

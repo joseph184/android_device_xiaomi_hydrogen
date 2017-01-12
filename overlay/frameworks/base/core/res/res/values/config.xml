@@ -50,6 +50,10 @@
          * The remote submix module "audio.r_submix.default" must be installed on the device.
          * The device must be provisioned with HDCP keys (for protected content).
     -->
+    
+    <integer name="config_buttonBrightnessSettingDefault">40</integer>
+    <bool name="config_deviceHasVariableButtonBrightness">true</bool>
+    
     <bool name="config_enableWifiDisplay">true</bool>
 
 </resources>

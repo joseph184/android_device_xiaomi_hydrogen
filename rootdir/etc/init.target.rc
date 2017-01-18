@@ -42,6 +42,18 @@ on property:init.svc.surfaceflinger=stopped
 on property:init.svc.surfaceflinger=running
     start displayfeature
 
+on property:init.svc.surfaceflinger=restarting
+    stop displayfeature
+
+on property:init.svc.zygote=stopped
+    stop displayfeature
+
+on property:init.svc.zygote=running
+    start displayfeature
+
+on property:init.svc.zygote=restarting
+    stop displayfeature
+
 # Fix for Telephony access
     chmod 0644 /proc/cmdline
  

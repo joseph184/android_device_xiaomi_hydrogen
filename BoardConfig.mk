@@ -37,6 +37,9 @@ TARGET_KERNEL_CONFIG := lineage_hydrogen_defconfig
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
+# RIL
+BOARD_PROVIDES_LIBRIL := true
+
 # Sepolicy
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 

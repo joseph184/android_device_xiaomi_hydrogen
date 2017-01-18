@@ -15,7 +15,7 @@
 ** limitations under the License.
 */
 
-#define LOG_TAG "RILC"
+#define LOG_TAG "RILCust"
 
 #include <hardware_legacy/power.h>
 #include <telephony/ril.h>
@@ -289,6 +289,7 @@ static void dispatchGetCarrierRestrictions(Parcel &p, RequestInfo *pRI);
 static int responseInts(Parcel &p, void *response, size_t responselen);
 static int responseFailCause(Parcel &p, void *response, size_t responselen);
 static int responseStrings(Parcel &p, void *response, size_t responselen);
+static int responseStringsDataRegistrationState(Parcel &p, void *response, size_t responselen);
 static int responseString(Parcel &p, void *response, size_t responselen);
 static int responseVoid(Parcel &p, void *response, size_t responselen);
 static int responseCallList(Parcel &p, void *response, size_t responselen);
@@ -2593,6 +2594,31 @@ static int responseStrings(Parcel &p, void *response, size_t responselen) {
     return 0;
 }
 
+/** Fix DC-HSPAP not supported: Redirect RIL_RADIO_TECHNOLOGY: 20 (DC-HSPAP) ==> 15 (HSPAP) */
+static int responseStringsDataRegistrationState(Parcel &p, void *response, size_t responselen) {
+    int numStrings;
+
+    if (response == NULL && responselen != 0) {
+        RLOGE("invalid response: NULL");
+        return RIL_ERRNO_INVALID_RESPONSE;
+    }
+    if (responselen % sizeof(char *) != 0) {
+        RLOGE("responseStrings: invalid response length %d expected multiple of %d\n",
+            (int)responselen, (int)sizeof(char *));
+        return RIL_ERRNO_INVALID_RESPONSE;
+    }
+
+    char **p_cur = (char **) response;
+
+    RLOGI("DATA: RAT=%s", p_cur[3]);
+
+    if (p_cur[3] != NULL && strncmp(p_cur[3], "20", 2) == 0) {
+        strncpy(p_cur[3], "15", 2);
+        RLOGI("Fooling AOSP: redirecting DC-HSPAP RAT=20 to HSPAP RAT=%s", p_cur[3]);
+    }
+      
+    return responseStrings(p, response, responselen);
+}
 
 /**
  * NULL strings are accepted

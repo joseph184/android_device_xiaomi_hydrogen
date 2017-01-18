@@ -18,8 +18,11 @@
 
 DEVICE_PATH := device/xiaomi/hydrogen
 
+# Use Snapdragon LLVM, if available
+#TARGET_USE_SDCLANG := true
+
 # Assert
-TARGET_OTA_ASSERT_DEVICE := hydrogen
+TARGET_OTA_ASSERT_DEVICE := hydrogen,helium
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth

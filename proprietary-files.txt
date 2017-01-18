@@ -584,6 +584,7 @@ etc/permissions/com.qti.snapdragon.sdk.display.xml
 framework/com.qti.snapdragon.sdk.display.jar
 -vendor/app/colorservice/colorservice.apk
 vendor/bin/mm-pp-daemon
+etc/calib.cfg
 vendor/lib64/libdisp-aba.so
 vendor/lib64/libmm-als.so
 vendor/lib64/libmm-dspp-utils.so
@@ -641,6 +642,7 @@ vendor/lib/libsmemlog.so
 -app/shutdownlistener/shutdownlistener.apk
 -framework/qcnvitems.jar
 -framework/qcrilhook.jar
+#-framework/qti-telephony-common.jar
 bin/mmbn-daemon
 bin/netmgrd
 bin/qmuxd
@@ -650,6 +652,7 @@ bin/tftp_server
 etc/permissions/embms.xml
 etc/permissions/qcnvitems.xml
 etc/permissions/qcrilhook.xml
+#etc/permissions/qti_telephony_common.xml
 etc/modem/Diag.cfg
 framework/embmslibrary.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
@@ -665,7 +668,8 @@ vendor/lib64/libxml.so
 vendor/lib/libmdmdetect.so
 vendor/lib/libxml.so
 vendor/qcril.db
-# New blobs from 7.0 MIUI, fixes unknown baseband/sim not detected, other fixes here for libs moved in diffrent directories
+# New blobs from 7.0 MIUI, fixes unknown baseband/sim not detected,
+# other fixes here for libs moved in diffrent directories
 vendor/lib/libril-qc-ltedirectdisc.so
 vendor/lib64/libril-qc-ltedirectdisc.so
 vendor/lib/librilqmiservices.so
@@ -675,6 +679,7 @@ vendor/lib64/libsettings.so
 
 # Sensors
 bin/sensors.qcom
+framework/com.xiaomi.sensor.jar
 etc/permissions/com.xiaomi.sensor.xml
 lib64/libcalapi.so
 lib64/libsensor_cal.so

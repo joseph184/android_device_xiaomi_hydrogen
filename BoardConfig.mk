@@ -31,6 +31,9 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3221225472
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 26705099776 # 26705116160 - 16384
 
+# FM
+BOARD_HAVE_QCOM_FM := true
+
 # Kernel
 TARGET_KERNEL_CONFIG := lineage_hydrogen_defconfig
 
@@ -42,6 +45,9 @@ BOARD_PROVIDES_LIBRIL := true
 
 # Sepolicy
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+
+# Enable root
+WITH_SU := true
 
 # Tap-to-Wake
 TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"

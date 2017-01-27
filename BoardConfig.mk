@@ -18,11 +18,8 @@
 
 DEVICE_PATH := device/xiaomi/hydrogen
 
-# Use Snapdragon LLVM, if available
-#TARGET_USE_SDCLANG := true
-
 # Assert
-TARGET_OTA_ASSERT_DEVICE := hydrogen,helium
+TARGET_OTA_ASSERT_DEVICE := hydrogen
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
@@ -31,11 +28,8 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3221225472
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 26705099776 # 26705116160 - 16384
 
-# FM
-BOARD_HAVE_QCOM_FM := true
-
 # Kernel
-TARGET_KERNEL_CONFIG := lineage_hydrogen_defconfig
+TARGET_KERNEL_CONFIG := lineageos_hydrogen_defconfig
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
@@ -45,9 +39,6 @@ BOARD_PROVIDES_LIBRIL := true
 
 # Sepolicy
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
-
-# Enable root
-WITH_SU := true
 
 # Tap-to-Wake
 TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"

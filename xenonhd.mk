@@ -39,7 +39,7 @@ AdAway \
 MiXplorer \
 KernelAdiutor
 
-PRODUCT_PROPERTY_OVERRIDES += ro.xenonhd.maintainer=Dave
+PRODUCT_PROPERTY_OVERRIDES += ro.xenonhd.maintainer=Joseph
 
 # Use the latest approved GMS identifiers unless running a signed build
 ifneq ($(SIGN_BUILD),true)
